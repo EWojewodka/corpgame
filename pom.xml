@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>LocalProject</groupId>
+  <artifactId>LocalProject</artifactId>
+  <version>01</version>
+  <packaging>jar</packaging>
+  <name>local-project</name>
+  
+  <properties>
+  	<project.main.class>com.sygnity.local.PlatformRunnable</project.main.class>
+  </properties>
+  
+  <repositories>
+	 <repository>
+        <id>maven-central</id>
+        <url>http://repo1.maven.org/maven2</url>
+    </repository>
+  </repositories>
+  
+  <build>
+  	<plugins>
+		<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.7.0</version>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin>
+		
+		<plugin>
+		  <groupId>org.codehaus.mojo</groupId>
+		  <artifactId>exec-maven-plugin</artifactId>
+		  <version>1.2.1</version>
+		  <executions>
+		    <execution>
+		    	<id>run</id>
+		      	<goals>
+		        	<goal>java</goal>
+		      	</goals>
+		    </execution>
+		  </executions>
+		  <configuration>
+		    <mainClass>${project.main.class}</mainClass>
+		  </configuration>
+		</plugin>  	
+  	</plugins>
+  </build>
+
+</project>
