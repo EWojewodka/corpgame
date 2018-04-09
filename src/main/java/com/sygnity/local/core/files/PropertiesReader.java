@@ -52,4 +52,9 @@ public class PropertiesReader {
 		return result;
 	}
 
+	public static String getProperty(String propertiesName, String propertyName) {
+		PropertiesReader reader = getReader(propertiesName);
+		return reader.getProperty(propertyName);
+	}
+
 }

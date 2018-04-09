@@ -5,6 +5,7 @@ import java.util.Properties;
 import javax.swing.JFrame;
 
 import com.sygnity.local.core.files.PropertiesReader;
+import com.sygnity.local.gui.panes.MenuPane;
 
 public class GameFrame extends JFrame {
 
@@ -22,6 +23,8 @@ public class GameFrame extends JFrame {
 		setTitle(APPLICATION_PROPERTIES.getProperty("app.title"));
 		setSize(Integer.valueOf(APPLICATION_PROPERTIES.getProperty("gui.width")),
 				Integer.valueOf(APPLICATION_PROPERTIES.getProperty("gui.height")));
+		setLocation(0, 700);
+		add(new MenuPane(this));
 	}
 
 }
